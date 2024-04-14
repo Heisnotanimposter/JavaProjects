@@ -1,0 +1,66 @@
+Who is making the Web standards?
+
+The World Wide Web Consortium  
+
+Choose the correct HTML element for the largest heading:
+
+<h1>  
+
+What is the correct HTML for adding a background color?
+
+<body style="background-color:yellow;">  
+
+How can you open a link in a new tab/browser window?
+
+<a href="url" target="_blank">  
+
+Inline elements are normally displayed without starting a new line.
+
+True
+
+What is the correct HTML for making a text area?
+
+<textarea>  
+
+What is the correct HTML for inserting a background image?
+
+<body style="background-image:url(background.gif)">  
+
+Block elements are normally displayed without starting a new line.
+
+False  
+
+In HTML, you can embed SVG elements directly into an HTML page.
+
+True  
+
+The HTML global attribute, "contenteditable" is used to:
+
+Specify whether the content of an element should be editable or not  
+
+In HTML, onblur and onfocus are:
+
+Event attributes  
+
+Graphics defined by SVG is in which format?
+
+XML  
+
+The HTML <canvas> element is used to:
+
+draw graphics  
+
+Which input type defines a slider control?
+
+
+range  
+
+Which HTML element is used to display a scalar measurement within a range?
+
+
+<meter>  
+
+Which HTML element is used to specify a header for a document or section?
+
+
+<header>  

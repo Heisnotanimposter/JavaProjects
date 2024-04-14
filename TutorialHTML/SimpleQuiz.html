@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Knowledge Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .question { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<h1>HTML Knowledge Quiz</h1>
+<form id="quizForm">
+    <div class="question">
+        <p>Who is making the Web standards?</p>
+        <input type="radio" name="q1" value="false">Mozilla<br>
+        <input type="radio" name="q1" value="true">The World Wide Web Consortium<br>
+    </div>
+    <div class="question">
+        <p>Choose the correct HTML element for the largest heading:</p>
+        <input type="radio" name="q2" value="false"><code>&lt;h6&gt;</code><br>
+        <input type="radio" name="q2" value="true"><code>&lt;h1&gt;</code><br>
+    </div>
+    <div class="question">
+        <p>What is the correct HTML for adding a background color?</p>
+        <input type="radio" name="q3" value="true"><code>&lt;body style="background-color:yellow;"&gt;</code><br>
+        <input type="radio" name="q3" value="false"><code>&lt;background&gt;yellow&lt;/background&gt;</code><br>
+    </div>
+    <div class="question">
+        <p>How can you open a link in a new tab/browser window?</p>
+        <input type="radio" name="q4" value="false"><code>&lt;a href="url" target="new"&gt;</code><br>
+        <input type="radio" name="q4" value="true"><code>&lt;a href="url" target="_blank"&gt;</code><br>
+    </div>
+    <div class="question">
+        <p>What is the correct HTML for making a text area?</p>
+        <input type="radio" name="q5" value="false"><code>&lt;input type="textarea"&gt;</code><br>
+        <input type="radio" name="q5" value="true"><code>&lt;textarea&gt;</code><br>
+    </div>
+    <div class="question">
+        <p>What is the correct HTML for inserting a background image?</p>
+        <input type="radio" name="q6" value="false"><code>&lt;background img="background.gif"&gt;</code><br>
+        <input type="radio" name="q6" value="true"><code>&lt;body style="background-image:url(background.gif)"&gt;</code><br>
+    </div>
+    <div class="question">
+        <p>In HTML, you can embed SVG elements directly into an HTML page.</p>
+        <input type="radio" name="q7" value="false">False<br>
+        <input type="radio" name="q7" value="true">True<br>
+    </div>
+    <div class="question">
+        <p>The HTML global attribute, "contenteditable" is used to:</p>
+        <input type="radio" name="q8" value="false">Update content from the server<br>
+        <input type="radio" name="q8" value="true">Specify whether the content of an element should be editable or not<br>
+    </div>
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+</form>
+<p id="score"></p>
+
+<script>
+function submitQuiz() {
+    var score = 0;
+    var form = document.getElementById('quizForm');
+    var answers = ["true", "true", "true", "true", "true", "true", "true", "true"]; // Correct answers for each question
+
+    for (var i = 1; i <= answers.length; i++) {
+        var q = form['q' + i];
+        var selectedValue = "";
+        for (var j = 0; j < q.length; j++) {
+            if (q[j].checked) {
+                selectedValue = q[j].value;
+                break;
+            }
+        }
+        if (selectedValue === answers[i - 1]) {
+            score++;
+        } else if (selectedValue !== "") {
+            score--;
+        }
+    }
+
+    document.getElementById('score').textContent = "Your score is: " + score;
+}
+</script>
+</body>
+</html>
