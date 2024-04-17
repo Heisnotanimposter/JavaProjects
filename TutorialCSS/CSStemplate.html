@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Knowledge Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .question { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<h1>CSS Knowledge Quiz</h1>
+<form id="quizForm">
+    <div class="question">
+        <p>What is the correct HTML for referring to an external style sheet?</p>
+        <input type="radio" name="q1" value="false">&lt;style src=&quot;mystyle.css&quot;&gt;<br>
+        <input type="radio" name="q1" value="true">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;<br>
+    </div>
+    <div class="question">
+        <p>Where in an HTML document is the correct place to refer to an external style sheet?</p>
+        <input type="radio" name="q2" value="false">In the &lt;body&gt; section<br>
+        <input type="radio" name="q2" value="true">In the &lt;head&gt; section<br>
+    </div>
+    <div class="question">
+        <p>Which HTML tag is used to define an internal style sheet?</p>
+        <input type="radio" name="q3" value="false">&lt;css&gt;<br>
+        <input type="radio" name="q3" value="true">&lt;style&gt;<br>
+    </div>
+    <div class="question">
+        <p>Which HTML attribute is used to define inline styles?</p>
+        <input type="radio" name="q4" value="false">styles<br>
+        <input type="radio" name="q4" value="true">style<br>
+    </div>
+    <div class="question">
+        <p>Which is the correct CSS syntax?</p>
+        <input type="radio" name="q5" value="false">body:color=black;<br>
+        <input type="radio" name="q5" value="true">body {color: black;}<br>
+    </div>
+    <div class="question">
+        <p>Which property is used to change the background color?</p>
+        <input type="radio" name="q6" value="false">bgcolor  <br>
+        <input type="radio" name="q6" value="true">background-color  <br>
+    </div>
+    <div class="question">
+        <p>How do you add a background color for all &lt;h1&gt; elements?</p>
+        <input type="radio" name="q7" value="false">h1.al {background-color:#FFFFFF;}<br>
+        <input type="radio" name="q7" value="true">h1 {background-color:#FFFFFF;}<br>
+    </div>
+    <div class="question">
+        <p>Which CSS property is used to change the text color of an element?
+
+</p>
+        <input type="radio" name="q8" value="false">fgcolor  <br>
+        <input type="radio" name="q8" value="true">color<br>
+    </div>
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+</form>
+<p id="score"></p>
+
+<script>
+function submitQuiz() {
+    var score = 0;
+    var form = document.getElementById('quizForm');
+    var answers = ["true", "true", "true", "true", "true", "true", "true", "true"]; // Correct answers for each question
+
+    for (var i = 1; i <= answers.length; i++) {
+        var q = form['q' + i];
+        var selectedValue = "";
+        for (var j = 0; j < q.length; j++) {
+            if (q[j].checked) {
+                selectedValue = q[j].value;
+                break;
+            }
+        }
+        if (selectedValue === answers[i - 1]) {
+            score++;
+        } else if (selectedValue !== "") {
+            score--;
+        }
+    }
+
+    document.getElementById('score').textContent = "Your score is: " + score;
+}
+</script>
+</body>
+</html>
